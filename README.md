@@ -1,4 +1,3 @@
-<a href="http://dnsexit.com"><img src="http://dnsexit.com/images/dns.gif" border=0></a>
 
 <!doctype html>
 <html lang="en">
