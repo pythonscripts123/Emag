@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <!--
-    Plain-Academic by Vasilios Mavroudis
-    Released under the Simplified BSD License/FreeBSD (2-clause) License.
-    https://github.com/mavroudisv/plain-academic
+    Adapted by pythonscripts123 from Plain-Academic by Vasilios Mavroudis
+    Free for personal use. https://github.com/pythonscripts123
 -->
 
 <html lang="en">
@@ -14,80 +13,103 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+  <style>
+    body { background: #f9f9f9; }
+    .game-embed { margin-bottom: 30px; }
+    .sidebar-links dd { margin-bottom: 10px; }
+    .navbar-brand { font-family: 'Oswald', sans-serif; font-size: 28px; }
+    .emag-title { font-family: 'Oswald', sans-serif; font-size: 32px; }
+    .credit { color:#b5bec9; font-size:0.8em; float:right; }
+  </style>
 </head>
 <body>
 
-
 <!-- Navigation -->
-	<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-	  <div class="container">
-		<div class="navbar-header">
-		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-		</div>
-
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		  <ul class="nav navbar-nav">
-				  <li><a href="index.html">Home</a></li>
-				  <li><a href="#">Projects</a></li>
-				  <li><a href="#publications">Publications</a></li> 
-				  <li><a href="#">CV</a></li> 
-		  </ul>
-		</div>
-	  </div>
-	</nav>
-  
-  <!-- Page Content -->
-    <div class="container">
-
-        <div class="row">
-
-            <!-- Entries Column -->
-            <div class="col-md-8" style="height: 100vh;">
-                
-                <!-- Main Image -->
-                <img class="img-responsive" src="photo.gif" alt=""><br>
-                
-                <div style="margin-top:3%; text-align:justify;">                
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing <a href="#">elit</a>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-					
-					<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-					
-					<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-                </div>
-            </div> 
-
-                   
-            <!-- Publications -->
-            <div class="col-md-8" style="height: 100vh;">    
-                <h2 id="publications">Publications</h2>
-                
-                <strong>Peer-reviewed</strong><br/>
-                <ul>
-                <li class="paper" words="add, your, keywords, here"><a href="#">Full title</a> Names of the authors</li>
-                </ul>
-            
-                <strong>Technical Reports</strong><br/>
-                <ul>
-                <li class="paper" words="add, your, keywords, here"><a href="#">Full title</a>. Details of the report</li>
-                </ul>
-            </div>
-
-            
-        </div>
-
-
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.html">EMAG Games</a>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#emag-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
     </div>
-    <!-- /.container -->
+    <div class="collapse navbar-collapse" id="emag-navbar">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#games">Games</a></li>
+        <li><a href="#about">About</a></li> 
+        <li><a href="https://github.com/pythonscripts123" target="_blank">GitHub</a></li> 
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<!-- Page Content -->
+<div class="container">
+  <div class="row">
+
+    <!-- Main Column -->
+    <div class="col-md-8" style="min-height: 100vh;">
+      
+      <!-- Banner Image -->
+      <img class="img-responsive" src="https://via.placeholder.com/900x300?text=EMAG+Games" alt="EMAG Games Banner" style="margin-bottom:20px;">
+      
+      <div style="margin-top:3%; text-align:justify;">                
+        <p>Welcome to <b>EMAG Games</b>! Enjoy a growing collection of online games you can play right here. Bookmark and check back often for more fun!</p>
+        <p>Have a game suggestion or want to contribute? <a href="https://github.com/pythonscripts123" target="_blank">Contact pythonscripts123 on GitHub</a>.</p>
+      </div>
+
+      <!-- Embedded Games Section -->
+      <h2 id="games" style="margin-top:40px;">Featured Games</h2>
+      
+      <!-- Example: 2048 Game Embed -->
+      <div class="game-embed">
+        <h4>2048</h4>
+        <iframe src="https://play2048.co/" width="100%" height="500" frameborder="0" allowfullscreen style="border:1px solid #ccc;"></iframe>
+      </div>
+      
+      <!-- Example: Tetris Game Embed -->
+      <div class="game-embed">
+        <h4>Tetris</h4>
+        <iframe src="https://tetris.com/play-tetris" width="100%" height="500" frameborder="0" allowfullscreen style="border:1px solid #ccc;"></iframe>
+      </div>
+
+      <!-- Example: Chess Game Embed -->
+      <div class="game-embed">
+        <h4>Chess</h4>
+        <iframe src="https://www.chess.com/play/computer" width="100%" height="500" frameborder="0" allowfullscreen style="border:1px solid #ccc;"></iframe>
+      </div>
+
+      <!-- Add more game iframes as needed -->
+
+    </div> 
+
+    <!-- Sidebar -->
+    <div class="col-md-4">
+      <div class="emag-title"><b>EMAG Games</b></div><br>
+      <p><b>Contact:</b> <a href="https://github.com/pythonscripts123" target="_blank">pythonscripts123</a><br>
+      <p>
+        Curated by pythonscripts123<br>
+        <a href="https://github.com/pythonscripts123" target="_blank">github.com/pythonscripts123</a>
+      </p>
+      <div class="sidebar-links" style="margin-top:2%">
+        <dd><a href="https://github.com/pythonscripts123" target="_blank">GitHub</a></dd>
+        <dd><a href="https://discord.com/" target="_blank">Discord (coming soon)</a></dd>
+      </div>
+      <div id="about" style="margin-top:30px;">
+        <h4>About EMAG</h4>
+        <p>EMAG is a simple, free online arcade. Play classic and modern games, right in your browser—no downloads needed!</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- /.container -->
     
-    <!-- Other people may like it too! -->
-    <a style="color:#b5bec9;font-size:0.8em; float:right;" href="https://github.com/mavroudisv/plain-academic">Plain Academic</a> 
+<a class="credit" href="https://github.com/pythonscripts123">Site by pythonscripts123</a> 
     
 </body>
-
 </html>
