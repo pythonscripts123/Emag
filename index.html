@@ -21,7 +21,25 @@
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
-    .game-container { margin-top: 25px; }
+    .game-box {
+      border: 2px solid #ccc;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .game-title {
+      font-weight: 600;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .sidebar {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
     .footer {
       position: fixed;
       left: 0;
@@ -73,37 +91,33 @@
   </div>
 
   <div class="row">
+    <!-- Main Content -->
     <div class="col-md-8" style="min-height: 100vh;">
       <div class="emag-title">Welcome to EMAG Games</div>
       <p>Welcome to EMAG, your go-to place for free online games. Play your favorite classic and modern games directly in your browser without needing to download anything!</p>
-      <p>Have any game suggestions or feedback? Want to get in touch? <a href="https://github.com/pythonscripts123" target="_blank">Contact pythonscripts123 on GitHub</a>.</p>
-      
+
       <!-- Game List Section -->
       <h2>Featured Games</h2>
-      <div class="game-container">
-        <div class="game-list-entry">
-          <div class="game-thumb" style="width: 120px; height: 67px; background: #ccc;"></div>
-          <div class="game-info">
-            <a class="game-title game-link" data-target="coming-soon" tabindex="0">Game Coming Soon</a>
-            <div class="game-tags">coming soon, game, fun, exciting</div>
-          </div>
-        </div>
-        <div class="game-list-entry">
-          <div class="game-thumb" style="width: 120px; height: 67px; background: #ccc;"></div>
-          <div class="game-info">
-            <a class="game-title game-link" data-target="coming-soon" tabindex="0">Game Coming Soon</a>
-            <div class="game-tags">coming soon, game, fun, exciting</div>
-          </div>
-        </div>
-        <div class="game-list-entry">
-          <div class="game-thumb" style="width: 120px; height: 67px; background: #ccc;"></div>
-          <div class="game-info">
-            <a class="game-title game-link" data-target="coming-soon" tabindex="0">Game Coming Soon</a>
-            <div class="game-tags">coming soon, game, fun, exciting</div>
-          </div>
-        </div>
+      <div class="game-box">
+        <div class="game-title">Game Coming Soon</div>
+        <p>blah blah blah blah</p>
       </div>
+      <div class="game-box">
+        <div class="game-title">Game Coming Soon</div>
+        <p>blah blah blah blah</p>
+      </div>
+      <div class="game-box">
+        <div class="game-title">Game Coming Soon</div>
+        <p>blah blah blah blah</p>
+      </div>
+    </div>
 
+    <!-- Sidebar -->
+    <div class="col-md-4">
+      <div class="sidebar">
+        <p><b>MAG</b> is a simple, free online arcade. Play classic and modern games, right in your browser—no downloads needed!</p>
+        <p><b>Contact:</b> <a href="https://github.com/pythonscripts123" target="_blank">Contact pythonscripts123 on GitHub</a>.</p>
+      </div>
     </div>
   </div>
 </div>
