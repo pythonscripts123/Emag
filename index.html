@@ -96,6 +96,12 @@
       // Toggle game embed and show description for the clicked game only
       $(".game-btn, .game-link").click(function(e) {
         var target = $(this).data("target");
+        // Special Chrome Dino handling (opens chrome://dino in new tab)
+        if(target === "chrome-dino-game") {
+          window.open("chrome://dino", "_blank");
+          e.preventDefault();
+          return;
+        }
         // Hide all game embeds and descriptions
         $(".game-embed").hide();
         $(".game-description").removeClass("show");
@@ -145,7 +151,7 @@
     <div class="col-md-8" style="min-height: 100vh;">
       
       <!-- Banner Image -->
-      <img class="banner-img img-responsive" src="https://user-images.githubusercontent.com/74397633/274046602-5c57f9a7-1e45-4b8a-8e6a-6f1d1c1f9e78.png" alt="EMAG Free Online Games Banner" />
+      <img class="banner-img img-responsive" src="https://raw.githubusercontent.com/pythonscripts123/Emag/main/emag%20banner.png" alt="EMAG Free Online Games Banner" />
 
       <div style="margin-top:3%; text-align:justify;">                
         <p>Welcome to <b>EMAG Games</b>! Enjoy a growing collection of online games you can play right here. Bookmark and check back often for more fun!</p>
@@ -165,11 +171,11 @@
             </div>
           </div>
         </div>
-        <!-- Chrome Dino Game List Entry (chrome://dino notice) -->
+        <!-- Chrome Dino Game List Entry (opens chrome://dino) -->
         <div class="game-list-entry">
           <img class="game-thumb" src="https://raw.githubusercontent.com/wayou/t-rex-runner/gh-pages/assets/t-rex.png" alt="Chrome Dino Thumbnail"/>
           <div class="game-info">
-            <a class="game-title game-link" data-target="chrome-dino-game" tabindex="0">Chrome Dino (Offline Game)</a>
+            <a class="game-title game-link" data-target="chrome-dino-game" tabindex="0">Chrome Dino (Open in Chrome)</a>
             <div class="game-tags">
               dinosaur, arcade, endless, offline, classic, jump, pixel, free
             </div>
@@ -212,25 +218,6 @@ P: Fullscreen
 
 How To Play Drift King
 The traditional approach in a car game would be to give zero cash to the player at the beginning.
-        </div>
-      </div>
-      <!-- Chrome Dino Embed (instructions for chrome://dino) -->
-      <div class="game-embed" id="chrome-dino-game">
-        <h4>Chrome Dino (Offline Game)</h4>
-        <div style="background:#eee; padding:20px; border-radius:8px; border:1px solid #ccc; font-size:15px;">
-          <b>How to Play Chrome Dino (the original Chrome offline game):</b><br>
-          <ul>
-            <li>Open Google Chrome</li>
-            <li>Type <b>chrome://dino</b> in your address bar and press Enter</li>
-            <li>Press Space to start running and jump over obstacles</li>
-            <li>Enjoy the classic Dino game – no internet required!</li>
-          </ul>
-          <div style="margin-top:8px">
-            <img src="https://raw.githubusercontent.com/wayou/t-rex-runner/gh-pages/assets/t-rex.png" alt="Chrome Dino" style="height:60px;width:auto;">
-          </div>
-        </div>
-        <div class="game-description" id="desc-chrome-dino-game">
-          Chrome Dino is the classic offline dinosaur game from Google Chrome browsers. To play, open a new tab and visit <b>chrome://dino</b> in Chrome.
         </div>
       </div>
       <!-- Chicken Jockey 3D Model Embed -->
