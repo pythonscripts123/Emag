@@ -1,62 +1,28 @@
-const dino = document.getElementById("dino");
-const obstacle = document.getElementById("obstacle");
-const scoreEl = document.getElementById("score");
-let isJumping = false;
-let score = 0;
+function searchGames() {
+  let input = document.getElementById("searchInput").value.toLowerCase();
+  let games = document.querySelectorAll("#gameList li");
 
-// Jump function
-function jump() {
-    if (isJumping) return;
-    isJumping = true;
-    let jumpHeight = 0;
-    const upInterval = setInterval(() => {
-        if (jumpHeight >= 100) {
-            clearInterval(upInterval);
-            const downInterval = setInterval(() => {
-                if (jumpHeight <= 0) {
-                    clearInterval(downInterval);
-                    isJumping = false;
-                }
-                jumpHeight -= 5;
-                dino.style.bottom = jumpHeight + "px";
-            }, 20);
-        }
-        jumpHeight += 5;
-        dino.style.bottom = jumpHeight + "px";
-    }, 20);
+  games.forEach(game => {
+    let text = game.textContent.toLowerCase();
+    game.style.display = text.includes(input) ? "" : "none";
+  });
 }
 
-// Control jump with space or tap
-document.addEventListener("keydown", e => { if (e.code === "Space") jump(); });
-document.addEventListener("touchstart", jump);
+// Dino Game Modal Logic
+document.getElementById('openDinoBtn').onclick = function(e) {
+  e.preventDefault();
+  document.getElementById('dinoModal').style.display = 'block';
+  // Reload the iframe to reset the game each time
+  document.getElementById('dinoFrame').src = document.getElementById('dinoFrame').src;
+};
 
-// Move obstacle
-function moveObstacle() {
-    let obstaclePosition = 600;
-    const obstacleInterval = setInterval(() => {
-        obstaclePosition -= 10;
-        obstacle.style.right = obstaclePosition + "px";
+document.getElementById('closeDino').onclick = function() {
+  document.getElementById('dinoModal').style.display = 'none';
+};
 
-        // Collision detection
-        const dinoBottom = parseInt(dino.style.bottom.replace("px",""));
-        if (obstaclePosition < 90 && obstaclePosition > 50 && dinoBottom < 40) {
-            alert("Game Over! Score: " + score);
-            clearInterval(obstacleInterval);
-            obstacle.style.right = "0px";
-            score = 0;
-            scoreEl.innerText = "Score: 0";
-            obstaclePosition = 600;
-            moveObstacle();
-        }
-
-        // Update score
-        if (obstaclePosition === 0) {
-            score++;
-            scoreEl.innerText = "Score: " + score;
-        }
-
-        if (obstaclePosition <= -20) obstaclePosition = 600;
-    }, 50);
-}
-
-moveObstacle();
+window.onclick = function(event) {
+  const modal = document.getElementById('dinoModal');
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+};
