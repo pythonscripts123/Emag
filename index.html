@@ -28,40 +28,84 @@
     .tab-details a { color: #bada55; text-decoration: underline; }
     .game-btn { margin: 10px 16px 10px 0; }
     .game-container { margin-top: 25px; }
+
+    .game-list-entry {
+      margin-bottom: 18px;
+      display: flex;
+      align-items: flex-start;
+    }
     .game-thumb {
       width: 120px;
       height: 67px;
       object-fit: cover;
       border: 1px solid #ccc;
       border-radius: 4px;
-      margin-right: 10px;
+      margin-right: 12px;
       vertical-align: middle;
+      flex-shrink: 0;
     }
-    .game-list-entry {
-      margin-bottom: 18px;
+    .game-info {
+      flex-grow: 1;
     }
-    .game-description {
-      font-size: 14px;
-      margin-top: 6px;
-      color: #444;
-      white-space: pre-line;
+    .game-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 2px;
+      display: inline-block;
     }
     .game-tags {
       font-size: 12px;
       color: #888;
+      margin-bottom: 2px;
       margin-top: 2px;
+    }
+    .game-description {
+      font-size: 14px;
+      margin-top: 10px;
+      color: #444;
+      white-space: pre-line;
+      display: none;
+    }
+    .show {
+      display: block !important;
+    }
+    .game-link {
+      cursor: pointer;
+      text-decoration: underline;
+      color: #222;
+    }
+    .game-link:focus {
+      outline: none;
+      text-decoration: underline;
+    }
+    .banner-img {
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      border: 2px solid #c2bee6;
+    }
+    @media (max-width: 800px) {
+      .banner-img { max-height: 120px; object-fit: cover; }
     }
   </style>
   <script>
     $(document).ready(function() {
-      $(".game-btn").click(function() {
+      // Toggle game embed and show description for the clicked game only
+      $(".game-btn, .game-link").click(function(e) {
         var target = $(this).data("target");
+        // Hide all game embeds and descriptions
         $(".game-embed").hide();
+        $(".game-description").removeClass("show");
+        // Show the selected embed
         $("#" + target).show();
+        // Show the game description for this game
+        $("#desc-" + target).addClass("show");
         // Scroll to game area on mobile/small screens
         $('html, body').animate({
           scrollTop: $("#" + target).offset().top - 70
         }, 300);
+        e.preventDefault();
       });
     });
   </script>
@@ -98,27 +142,39 @@
     <!-- Main Column -->
     <div class="col-md-8" style="min-height: 100vh;">
       
-      <!-- Banner Image -->
-      <img class="img-responsive" src="https://via.placeholder.com/900x300?text=EMAG+Games" alt="EMAG Games Banner" style="margin-bottom:20px;">
-      
+      <!-- Banner Image (NEW) -->
+      <img class="banner-img img-responsive" src="https://images.githubusercontent.com/placeholder-for-banner-2.png" alt="EMAG Free Online Games Banner" />
+
       <div style="margin-top:3%; text-align:justify;">                
         <p>Welcome to <b>EMAG Games</b>! Enjoy a growing collection of online games you can play right here. Bookmark and check back often for more fun!</p>
         <p>Have a game suggestion or want to contribute? <a href="https://github.com/pythonscripts123" target="_blank">Contact pythonscripts123 on GitHub</a>.</p>
       </div>
 
-      <!-- Game Buttons & List -->
+      <!-- Game List -->
       <div id="games" class="game-container">
         <h2>Featured Games</h2>
-        <button class="btn btn-primary game-btn" data-target="tetris-game">Play Tetris</button>
-        <button class="btn btn-primary game-btn" data-target="drift-king-game">Play Drift King</button>
+        <!-- Drift King Game List Entry (matches your image, tags, and structure) -->
         <div class="game-list-entry">
           <img class="game-thumb" src="https://www.onlinegames.io/media/posts/729/responsive/Drift-King-xs.jpg" alt="Drift King Thumbnail"/>
-          <strong>Drift King</strong>
-          <div class="game-tags">
-            3d, car, crazy, drift, driving, free, multiplayer, simulator, speed, unity
+          <div class="game-info">
+            <a class="game-title game-link" data-target="drift-king-game" tabindex="0">Drift King</a>
+            <div class="game-tags">
+              3d, car, crazy, drift, driving, free, multiplayer, simulator, speed, unity
+            </div>
           </div>
-          <div class="game-description">
-            Drift King stands out among online drift games, offering a unique experience where you can witness the smoke you leave behind from the rearview window.  This game surrounds you in every realistic detail, from its premium 3D visuals to the choice of 10 sports cars and 6 maps.
+        </div>
+      </div>
+
+      <!-- Embedded Games (hidden, appear on button click) -->
+      <div class="game-embed" id="drift-king-game">
+        <h4>Drift King</h4>
+        <iframe src="https://www.onlinegames.io/games/2024/unity/drift-king/index.html" width="100%" height="600" frameborder="0" allowfullscreen style="border:1px solid #ccc;"></iframe>
+        <div style="font-size:12px; margin-top:6px;">
+          <a href="https://www.onlinegames.io/game/drift-king" target="_blank">Drift King on OnlineGames.io</a>
+        </div>
+        <div class="game-description" id="desc-drift-king-game">
+          Drift King stands out among online drift games, offering a unique experience where you can witness the smoke you leave behind from the rearview window.  This game surrounds you in every realistic detail, from its premium 3D visuals to the choice of 10 sports cars and 6 maps.
+
 The comprehensive tuning options further enhance the game, making it a complete package for drifting enthusiasts. 
 
 
@@ -135,26 +191,8 @@ P: Fullscreen
 
 How To Play Drift King
 The traditional approach in a car game would be to give zero cash to the player at the beginning.
-          </div>
         </div>
       </div>
-
-      <!-- Embedded Games (hidden, appear on button click) -->
-      <!-- Tetris Game Embed -->
-      <div class="game-embed" id="tetris-game">
-        <h4>Tetris</h4>
-        <iframe src="https://tetris.com/play-tetris" width="100%" height="500" frameborder="0" allowfullscreen style="border:1px solid #ccc;"></iframe>
-      </div>
-
-      <!-- Drift King Game Embed -->
-      <div class="game-embed" id="drift-king-game">
-        <h4>Drift King</h4>
-        <iframe src="https://www.onlinegames.io/games/2024/unity/drift-king/index.html" width="100%" height="600" frameborder="0" allowfullscreen style="border:1px solid #ccc;"></iframe>
-        <div style="font-size:12px; margin-top:6px;">
-          <a href="https://www.onlinegames.io/game/drift-king" target="_blank">Drift King on OnlineGames.io</a>
-        </div>
-      </div>
-
     </div> 
 
     <!-- Sidebar -->
