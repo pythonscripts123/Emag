@@ -7,11 +7,20 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+  <!-- Updated Google Fonts (regular + semi-bold weights) -->
+  <link href="https://fonts.googleapis.com/css?family=Oswald:400,600&display=swap" rel="stylesheet">
   <style>
-    body { background: #f9f9f9; font-family: 'Oswald', sans-serif; }
-    .navbar-brand { font-family: 'Oswald', sans-serif; font-size: 28px; }
-    .emag-title { font-family: 'Oswald', sans-serif; font-size: 32px; }
+    body { background: #f9f9f9; font-family: 'Oswald', sans-serif; font-weight: 400; }
+    .navbar-brand { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 28px; }
+    .emag-title { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 32px; margin-top: 20px; }
+    .banner {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
     .game-container { margin-top: 25px; }
     .footer {
       position: fixed;
@@ -57,8 +66,15 @@
 <!-- Page Content -->
 <div class="container">
   <div class="row">
+    <div class="col-md-12">
+      <!-- Banner Image -->
+      <img src="https://raw.githubusercontent.com/pythonscripts123/Emag/refs/heads/main/emag%20banner.png" alt="EMAG Games Banner" class="banner">
+    </div>
+  </div>
+
+  <div class="row">
     <div class="col-md-8" style="min-height: 100vh;">
-      <div class="emag-title"><b>Welcome to EMAG Games</b></div>
+      <div class="emag-title">Welcome to EMAG Games</div>
       <p>Welcome to EMAG, your go-to place for free online games. Play your favorite classic and modern games directly in your browser without needing to download anything!</p>
       <p>Have any game suggestions or feedback? Want to get in touch? <a href="https://github.com/pythonscripts123" target="_blank">Contact pythonscripts123 on GitHub</a>.</p>
       
