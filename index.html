@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<!--
-    Adapted by pythonscripts123 from Plain-Academic by Vasilios Mavroudis
-    Free for personal use. https://github.com/pythonscripts123
--->
-
 <html lang="en">
 <head>
   <title>EMAG Games</title>
@@ -16,10 +11,8 @@
   <style>
     body { background: #f9f9f9; }
     .game-embed { margin-bottom: 30px; display: none; }
-    .sidebar-links dd { margin-bottom: 10px; }
     .navbar-brand { font-family: 'Oswald', sans-serif; font-size: 28px; }
     .emag-title { font-family: 'Oswald', sans-serif; font-size: 32px; }
-    .credit { color:#b5bec9; font-size:0.8em; float:right; }
     .tab-details {
       position: fixed;
       left: 0; bottom: 0;
@@ -94,8 +87,6 @@
       <div id="games" class="game-container">
         <h2>Featured Games</h2>
         <button class="btn btn-primary game-btn" data-target="tetris-game">Play Tetris</button>
-        <button class="btn btn-primary game-btn" data-target="polytrack-game">Play Polytrack</button>
-        <button class="btn btn-primary game-btn" data-target="grow-garden-game">Play Grow a Garden</button>
       </div>
 
       <!-- Embedded Games (hidden, appear on button click) -->
@@ -105,31 +96,32 @@
         <iframe src="https://tetris.com/play-tetris" width="100%" height="500" frameborder="0" allowfullscreen style="border:1px solid #ccc;"></iframe>
       </div>
 
-      <!-- Polytrack Game Embed (itch.io) -->
-      <div class="game-embed" id="polytrack-game">
-        <h4>Polytrack</h4>
-        <iframe src="https://louisschmieder.itch.io/polytrack/embed" width="100%" height="600" frameborder="0" allowfullscreen style="border:1px solid #ccc;"></iframe>
-        <div style="font-size:12px; margin-top:6px;">
-          <a href="https://louisschmieder.itch.io/polytrack" target="_blank">Polytrack on itch.io</a>
-        </div>
+      <div style="margin-top:40px;">
+        <h3>Sites That Allow Game Embedding</h3>
+        <ul>
+          <li><b>itch.io (some games)</b> — <a href="https://itch.io/games/html5" target="_blank">HTML5 Games</a>
+            <br><span style="font-size:12px;">Many developers enable embedding. Look for "Embed" option on the game page.</span>
+          </li>
+          <li><b>GameMonetize</b> — <a href="https://gamemonetize.com/" target="_blank">gamemonetize.com</a>
+            <br><span style="font-size:12px;">Hundreds of embeddable HTML5 games. Each game has an iframe embed code.</span>
+          </li>
+          <li><b>Gamedistribution</b> — <a href="https://gamedistribution.com/" target="_blank">gamedistribution.com</a>
+            <br><span style="font-size:12px;">Register for access. Many games are provided with embed codes.</span>
+          </li>
+          <li><b>OpenGameArt (HTML5 Games)</b> — <a href="https://opengameart.org/forums/games/html5-games" target="_blank">OpenGameArt HTML5 Games</a>
+            <br><span style="font-size:12px;">Open-source HTML5 games and demos, often embeddable and modifiable.</span>
+          </li>
+          <li><b>Construct Arcade</b> — <a href="https://www.construct.net/en/free-online-games" target="_blank">construct.net</a>
+            <br><span style="font-size:12px;">Many games are embeddable. Always check the game's page for embed or share options.</span>
+          </li>
+          <li><b>Some open-source HTML5 games on GitHub</b>
+            <br><span style="font-size:12px;">You can self-host and embed these games if the license allows.</span>
+          </li>
+        </ul>
+        <p style="font-size:13px;">
+          <b>Note:</b> Always check the terms and use the provided embed code. Some platforms (like CrazyGames, Poki, and Miniclip) do <b>not</b> allow embedding.
+        </p>
       </div>
-
-      <!-- Grow a Garden Game Embed (CrazyGames) -->
-      <div class="game-embed" id="grow-garden-game">
-        <h4>Grow a Garden</h4>
-        <!-- CrazyGames does not officially allow external embedding via iframe. 
-             If you have permission or a partnership, you can embed.
-             Otherwise, provide a link: -->
-        <div style="text-align:center; padding:20px;">
-          <a href="https://www.crazygames.com/game/grow-a-garden" target="_blank" class="btn btn-success btn-lg">
-            Play Grow a Garden on CrazyGames
-          </a>
-          <p style="margin-top:10px; font-size:12px;">
-            This game opens in a new tab as embedding may be restricted by CrazyGames.
-          </p>
-        </div>
-      </div>
-
     </div> 
 
     <!-- Sidebar -->
