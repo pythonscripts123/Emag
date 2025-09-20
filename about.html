@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>About EMAG Games</title>
+  <title>About - EMAG Games</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -10,10 +10,9 @@
   <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
   <style>
     body { background: #f9f9f9; font-family: 'Oswald', sans-serif; }
-    .container { margin-top: 50px; text-align: center; }
-    .emag-title { font-size: 32px; margin-bottom: 20px; }
-    .about-text { font-size: 18px; color: #333; margin-bottom: 30px; }
-    .back-btn { margin-top: 20px; }
+    .navbar-brand { font-family: 'Oswald', sans-serif; font-size: 28px; }
+    .emag-title { font-family: 'Oswald', sans-serif; font-size: 32px; }
+    .container { margin-top: 50px; }
     .footer {
       position: fixed;
       left: 0;
@@ -32,13 +31,42 @@
 </head>
 <body>
 
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.html">EMAG Games</a>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#emag-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="emag-navbar">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#games">Games</a></li>
+        <li><a href="https://github.com/pythonscripts123" target="_blank">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
 <!-- Page Content -->
 <div class="container">
-  <div class="emag-title"><b>About EMAG Games</b></div>
-  <p class="about-text">EMAG is a simple, free online arcade. Play classic and modern games, right in your browser—no downloads needed!</p>
-  
-  <!-- Back Button -->
-  <a href="index.html" class="btn btn-primary back-btn">Back to Homepage</a>
+  <div class="row">
+    <div class="col-md-8" style="min-height: 100vh;">
+      <div class="emag-title"><b>About EMAG Games</b></div>
+      <p>EMAG is a simple, free online arcade. Play classic and modern games, right in your browser—no downloads needed!</p>
+      
+      <p><b>Contact:</b> <a href="https://github.com/pythonscripts123" target="_blank">Contact pythonscripts123 on GitHub</a>.</p>
+      
+      <!-- Back to Homepage Button -->
+      <a href="index.html" class="btn btn-primary">Back to Homepage</a>
+    </div>
+  </div>
 </div>
 
 <!-- Footer -->
