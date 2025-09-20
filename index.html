@@ -28,6 +28,29 @@
     .tab-details a { color: #bada55; text-decoration: underline; }
     .game-btn { margin: 10px 16px 10px 0; }
     .game-container { margin-top: 25px; }
+    .game-thumb {
+      width: 120px;
+      height: 67px;
+      object-fit: cover;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+    .game-list-entry {
+      margin-bottom: 18px;
+    }
+    .game-description {
+      font-size: 14px;
+      margin-top: 6px;
+      color: #444;
+      white-space: pre-line;
+    }
+    .game-tags {
+      font-size: 12px;
+      color: #888;
+      margin-top: 2px;
+    }
   </style>
   <script>
     $(document).ready(function() {
@@ -83,11 +106,37 @@
         <p>Have a game suggestion or want to contribute? <a href="https://github.com/pythonscripts123" target="_blank">Contact pythonscripts123 on GitHub</a>.</p>
       </div>
 
-      <!-- Game Buttons -->
+      <!-- Game Buttons & List -->
       <div id="games" class="game-container">
         <h2>Featured Games</h2>
         <button class="btn btn-primary game-btn" data-target="tetris-game">Play Tetris</button>
-        <button class="btn btn-primary game-btn" data-target="charger-city-driver-game">Play Charger City Driver</button>
+        <button class="btn btn-primary game-btn" data-target="drift-king-game">Play Drift King</button>
+        <div class="game-list-entry">
+          <img class="game-thumb" src="https://www.onlinegames.io/media/posts/729/responsive/Drift-King-xs.jpg" alt="Drift King Thumbnail"/>
+          <strong>Drift King</strong>
+          <div class="game-tags">
+            3d, car, crazy, drift, driving, free, multiplayer, simulator, speed, unity
+          </div>
+          <div class="game-description">
+            Drift King stands out among online drift games, offering a unique experience where you can witness the smoke you leave behind from the rearview window.  This game surrounds you in every realistic detail, from its premium 3D visuals to the choice of 10 sports cars and 6 maps.
+The comprehensive tuning options further enhance the game, making it a complete package for drifting enthusiasts. 
+
+
+Controls
+
+WASD or arrow keys: Move car 
+M: Rearview Mirror
+C: Change Carnera
+R: Reset Car
+U: Toggle between KMH and MPH
+I: Start/Stop Engine
+P: Fullscreen
+
+
+How To Play Drift King
+The traditional approach in a car game would be to give zero cash to the player at the beginning.
+          </div>
+        </div>
       </div>
 
       <!-- Embedded Games (hidden, appear on button click) -->
@@ -97,12 +146,12 @@
         <iframe src="https://tetris.com/play-tetris" width="100%" height="500" frameborder="0" allowfullscreen style="border:1px solid #ccc;"></iframe>
       </div>
 
-      <!-- Charger City Driver Game Embed (GameDistribution) -->
-      <div class="game-embed" id="charger-city-driver-game">
-        <h4>Charger City Driver</h4>
-        <iframe src="https://html5.gamedistribution.com/3f0aec385266424bb0529dfcecfe30b4/?gd_sdk_referrer_url=https://www.example.com/games/charger-city-driver" width="100%" height="600" scrolling="no" frameborder="0" allowfullscreen style="border:1px solid #ccc;"></iframe>
+      <!-- Drift King Game Embed -->
+      <div class="game-embed" id="drift-king-game">
+        <h4>Drift King</h4>
+        <iframe src="https://www.onlinegames.io/games/2024/unity/drift-king/index.html" width="100%" height="600" frameborder="0" allowfullscreen style="border:1px solid #ccc;"></iframe>
         <div style="font-size:12px; margin-top:6px;">
-          <a href="https://gamedistribution.com/games/charger-city-driver" target="_blank">Charger City Driver on GameDistribution</a>
+          <a href="https://www.onlinegames.io/game/drift-king" target="_blank">Drift King on OnlineGames.io</a>
         </div>
       </div>
 
