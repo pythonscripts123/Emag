@@ -15,12 +15,40 @@
   <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
   <style>
     body { background: #f9f9f9; }
-    .game-embed { margin-bottom: 30px; }
+    .game-embed { margin-bottom: 30px; display: none; }
     .sidebar-links dd { margin-bottom: 10px; }
     .navbar-brand { font-family: 'Oswald', sans-serif; font-size: 28px; }
     .emag-title { font-family: 'Oswald', sans-serif; font-size: 32px; }
     .credit { color:#b5bec9; font-size:0.8em; float:right; }
+    .tab-details {
+      position: fixed;
+      left: 0; bottom: 0;
+      width: 100%;
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 12px 0 8px 0;
+      font-size: 16px;
+      z-index: 1000;
+      border-top: 2px solid #444;
+    }
+    .tab-details a { color: #bada55; text-decoration: underline; }
+    .game-btn { margin: 10px 16px 10px 0; }
+    .game-container { margin-top: 25px; }
   </style>
+  <script>
+    $(document).ready(function() {
+      $(".game-btn").click(function() {
+        var target = $(this).data("target");
+        $(".game-embed").hide();
+        $("#" + target).show();
+        // Scroll to game area on mobile/small screens
+        $('html, body').animate({
+          scrollTop: $("#" + target).offset().top - 70
+        }, 300);
+      });
+    });
+  </script>
 </head>
 <body>
 
@@ -62,28 +90,25 @@
         <p>Have a game suggestion or want to contribute? <a href="https://github.com/pythonscripts123" target="_blank">Contact pythonscripts123 on GitHub</a>.</p>
       </div>
 
-      <!-- Embedded Games Section -->
-      <h2 id="games" style="margin-top:40px;">Featured Games</h2>
-      
-      <!-- Example: 2048 Game Embed -->
-      <div class="game-embed">
-        <h4>2048</h4>
-        <iframe src="https://play2048.co/" width="100%" height="500" frameborder="0" allowfullscreen style="border:1px solid #ccc;"></iframe>
+      <!-- Game Buttons -->
+      <div id="games" class="game-container">
+        <h2>Featured Games</h2>
+        <button class="btn btn-primary game-btn" data-target="tetris-game">Play Tetris</button>
+        <button class="btn btn-primary game-btn" data-target="chess-game">Play Chess (ChessKid)</button>
       </div>
-      
-      <!-- Example: Tetris Game Embed -->
-      <div class="game-embed">
+
+      <!-- Embedded Games (hidden, appear on button click) -->
+      <!-- Tetris Game Embed -->
+      <div class="game-embed" id="tetris-game">
         <h4>Tetris</h4>
         <iframe src="https://tetris.com/play-tetris" width="100%" height="500" frameborder="0" allowfullscreen style="border:1px solid #ccc;"></iframe>
       </div>
 
-      <!-- Example: Chess Game Embed -->
-      <div class="game-embed">
-        <h4>Chess</h4>
-        <iframe src="https://www.chess.com/play/computer" width="100%" height="500" frameborder="0" allowfullscreen style="border:1px solid #ccc;"></iframe>
+      <!-- ChessKid Embed -->
+      <div class="game-embed" id="chess-game">
+        <h4>Chess (ChessKid)</h4>
+        <iframe src="https://www.chesskid.com/play/fast-chess" width="100%" height="500" frameborder="0" allowfullscreen style="border:1px solid #ccc;"></iframe>
       </div>
-
-      <!-- Add more game iframes as needed -->
 
     </div> 
 
@@ -109,7 +134,10 @@
 </div>
 <!-- /.container -->
     
-<a class="credit" href="https://github.com/pythonscripts123">Site by pythonscripts123</a> 
+<!-- Tab at Bottom for Details -->
+<div class="tab-details">
+  <b>EMAG Games</b> &mdash; by <a href="https://github.com/pythonscripts123" target="_blank">pythonscripts123</a> | Contact: <a href="https://github.com/pythonscripts123" target="_blank">github.com/pythonscripts123</a>
+</div>
     
 </body>
 </html>
