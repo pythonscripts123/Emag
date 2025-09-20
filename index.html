@@ -57,6 +57,25 @@
       margin-bottom: 2px;
       margin-top: 2px;
     }
+    .game-description {
+      font-size: 14px;
+      margin-top: 10px;
+      color: #444;
+      white-space: pre-line;
+      display: none;
+    }
+    .show {
+      display: block !important;
+    }
+    .game-link {
+      cursor: pointer;
+      text-decoration: underline;
+      color: #222;
+    }
+    .game-link:focus {
+      outline: none;
+      text-decoration: underline;
+    }
     .banner-img {
       width: 100%;
       max-width: 100%;
@@ -69,19 +88,27 @@
     @media (max-width: 800px) {
       .banner-img { max-height: 120px; object-fit: cover; }
     }
+
+    /* Placeholder Game Box Styling */
+    .game-coming-soon {
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      padding: 20px;
+      margin-bottom: 20px;
+      background: #f1f1f1;
+      text-align: center;
+      font-size: 18px;
+      color: #333;
+    }
+    .game-coming-soon h4 {
+      font-size: 20px;
+      color: #000;
+    }
+    .game-coming-soon p {
+      font-size: 14px;
+      color: #666;
+    }
   </style>
-  <script>
-    $(document).ready(function () {
-      // Chrome Dino: open in new tab
-      $(".game-link").click(function (e) {
-        var target = $(this).data("target");
-        if (target === "chrome-dino-game") {
-          window.open("chrome://dino", "_blank");
-          e.preventDefault();
-        }
-      });
-    });
-  </script>
 </head>
 <body>
 
@@ -125,17 +152,26 @@
 
       <!-- Game List -->
       <div id="games" class="game-container">
-        <h2>Featured Game</h2>
-        <!-- Chrome Dino Game List Entry -->
-        <div class="game-list-entry">
-          <img class="game-thumb" src="https://raw.githubusercontent.com/wayou/t-rex-runner/gh-pages/assets/t-rex.png" alt="Chrome Dino Thumbnail"/>
-          <div class="game-info">
-            <a class="game-title game-link" data-target="chrome-dino-game" tabindex="0">Chrome Dino (Open in Chrome)</a>
-            <div class="game-tags">
-              dinosaur, arcade, endless, offline, classic, jump, pixel, free
-            </div>
-          </div>
+        <h2>Coming Soon</h2>
+
+        <!-- Placeholder 1 -->
+        <div class="game-coming-soon">
+          <h4>Game 1 Coming Soon</h4>
+          <p>Blah blah blah blah blah.</p>
         </div>
+
+        <!-- Placeholder 2 -->
+        <div class="game-coming-soon">
+          <h4>Game 2 Coming Soon</h4>
+          <p>Blah blah blah blah blah.</p>
+        </div>
+
+        <!-- Placeholder 3 -->
+        <div class="game-coming-soon">
+          <h4>Game 3 Coming Soon</h4>
+          <p>Blah blah blah blah blah.</p>
+        </div>
+
       </div>
     </div> 
 
