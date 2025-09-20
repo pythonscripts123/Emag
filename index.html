@@ -12,7 +12,7 @@
     body { background: #f9f9f9; font-family: 'Oswald', sans-serif; }
     .navbar-brand { font-family: 'Oswald', sans-serif; font-size: 28px; }
     .emag-title { font-family: 'Oswald', sans-serif; font-size: 32px; }
-    .container { margin-top: 50px; }
+    .game-container { margin-top: 25px; }
     .footer {
       position: fixed;
       left: 0;
@@ -58,45 +58,37 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8" style="min-height: 100vh;">
-      <!-- Banner Image -->
-      <img class="banner-img img-responsive" src="https://raw.githubusercontent.com/pythonscripts123/Emag/main/emag%20banner.png" alt="EMAG Free Online Games Banner" />
-      <div style="margin-top:3%; text-align:justify;">                
-        <p>Welcome to <b>EMAG Games</b>! Enjoy a growing collection of online games you can play right here. Bookmark and check back often for more fun!</p>
-        <p>Have a game suggestion or want to contribute? <a href="https://github.com/pythonscripts123" target="_blank">Contact pythonscripts123 on GitHub</a>.</p>
-      </div>
+      <div class="emag-title"><b>Welcome to EMAG Games</b></div>
+      <p>Enjoy a simple, free arcade experience where you can play classic and modern games right in your browser—no downloads required!</p>
+      <p>Have a game suggestion or want to contribute? <a href="https://github.com/pythonscripts123" target="_blank">Contact pythonscripts123 on GitHub</a>.</p>
       
-      <!-- Game List -->
-      <div id="games" class="game-container">
-        <h2>Featured Games</h2>
-        <!-- Placeholder Game 1 -->
+      <!-- Game List Section -->
+      <h2>Featured Games</h2>
+      <div class="game-container">
         <div class="game-list-entry">
+          <div class="game-thumb" style="width: 120px; height: 67px; background: #ccc;"></div>
           <div class="game-info">
-            <a class="game-title game-link" tabindex="0">Game Coming Soon</a>
-            <div class="game-tags">
-              Blah blah blah blah blah
-            </div>
+            <a class="game-title game-link" data-target="coming-soon" tabindex="0">Game Coming Soon</a>
+            <div class="game-tags">coming soon, game, fun, exciting</div>
           </div>
         </div>
-        <!-- Placeholder Game 2 -->
         <div class="game-list-entry">
+          <div class="game-thumb" style="width: 120px; height: 67px; background: #ccc;"></div>
           <div class="game-info">
-            <a class="game-title game-link" tabindex="0">Game Coming Soon</a>
-            <div class="game-tags">
-              Blah blah blah blah blah
-            </div>
+            <a class="game-title game-link" data-target="coming-soon" tabindex="0">Game Coming Soon</a>
+            <div class="game-tags">coming soon, game, fun, exciting</div>
           </div>
         </div>
-        <!-- Placeholder Game 3 -->
         <div class="game-list-entry">
+          <div class="game-thumb" style="width: 120px; height: 67px; background: #ccc;"></div>
           <div class="game-info">
-            <a class="game-title game-link" tabindex="0">Game Coming Soon</a>
-            <div class="game-tags">
-              Blah blah blah blah blah
-            </div>
+            <a class="game-title game-link" data-target="coming-soon" tabindex="0">Game Coming Soon</a>
+            <div class="game-tags">coming soon, game, fun, exciting</div>
           </div>
         </div>
       </div>
-    </div> 
+
+    </div>
   </div>
 </div>
 
