@@ -10,7 +10,6 @@
   <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
   <style>
     body { background: #f9f9f9; }
-    .game-embed { margin-bottom: 30px; display: none; }
     .navbar-brand { font-family: 'Oswald', sans-serif; font-size: 28px; }
     .emag-title { font-family: 'Oswald', sans-serif; font-size: 32px; }
     .tab-details {
@@ -26,7 +25,6 @@
       border-top: 2px solid #444;
     }
     .tab-details a { color: #bada55; text-decoration: underline; }
-    .game-btn { margin: 10px 16px 10px 0; }
     .game-container { margin-top: 25px; }
 
     .game-list-entry {
@@ -59,25 +57,6 @@
       margin-bottom: 2px;
       margin-top: 2px;
     }
-    .game-description {
-      font-size: 14px;
-      margin-top: 10px;
-      color: #444;
-      white-space: pre-line;
-      display: none;
-    }
-    .show {
-      display: block !important;
-    }
-    .game-link {
-      cursor: pointer;
-      text-decoration: underline;
-      color: #222;
-    }
-    .game-link:focus {
-      outline: none;
-      text-decoration: underline;
-    }
     .banner-img {
       width: 100%;
       max-width: 100%;
@@ -92,28 +71,14 @@
     }
   </style>
   <script>
-    $(document).ready(function() {
-      // Toggle game embed and show description for the clicked game only
-      $(".game-btn, .game-link").click(function(e) {
+    $(document).ready(function () {
+      // Chrome Dino: open in new tab
+      $(".game-link").click(function (e) {
         var target = $(this).data("target");
-        // Special Chrome Dino handling (opens chrome://dino in new tab)
-        if(target === "chrome-dino-game") {
+        if (target === "chrome-dino-game") {
           window.open("chrome://dino", "_blank");
           e.preventDefault();
-          return;
         }
-        // Hide all game embeds and descriptions
-        $(".game-embed").hide();
-        $(".game-description").removeClass("show");
-        // Show the selected embed
-        $("#" + target).show();
-        // Show the game description for this game
-        $("#desc-" + target).addClass("show");
-        // Scroll to game area on mobile/small screens
-        $('html, body').animate({
-          scrollTop: $("#" + target).offset().top - 70
-        }, 300);
-        e.preventDefault();
       });
     });
   </script>
@@ -142,7 +107,7 @@
     </div>
   </div>
 </nav>
-  
+
 <!-- Page Content -->
 <div class="container">
   <div class="row">
@@ -160,18 +125,8 @@
 
       <!-- Game List -->
       <div id="games" class="game-container">
-        <h2>Featured Games</h2>
-        <!-- Drift King Game List Entry -->
-        <div class="game-list-entry">
-          <img class="game-thumb" src="https://www.onlinegames.io/media/posts/729/responsive/Drift-King-xs.jpg" alt="Drift King Thumbnail"/>
-          <div class="game-info">
-            <a class="game-title game-link" data-target="drift-king-game" tabindex="0">Drift King</a>
-            <div class="game-tags">
-              3d, car, crazy, drift, driving, free, multiplayer, simulator, speed, unity
-            </div>
-          </div>
-        </div>
-        <!-- Chrome Dino Game List Entry (opens chrome://dino) -->
+        <h2>Featured Game</h2>
+        <!-- Chrome Dino Game List Entry -->
         <div class="game-list-entry">
           <img class="game-thumb" src="https://raw.githubusercontent.com/wayou/t-rex-runner/gh-pages/assets/t-rex.png" alt="Chrome Dino Thumbnail"/>
           <div class="game-info">
@@ -181,69 +136,13 @@
             </div>
           </div>
         </div>
-        <!-- Chicken Jockey 3D Model for Fun -->
-        <div class="game-list-entry">
-          <img class="game-thumb" src="https://media.sketchfab.com/models/b4a928ed219746b7997fb7057ec65f32/thumbnails/bac93e2e25e8412a9a704b45ccfae6d5/120x67.jpeg" alt="Chicken Jockey thumbnail"/>
-          <div class="game-info">
-            <a class="game-title game-link" data-target="chicken-jockey-fun" tabindex="0">Chicken Jockey 3D Model</a>
-            <div class="game-tags">
-              3d, model, minecraft, chicken jockey, fun, sketchfab
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Embedded Games (hidden, appear on button click) -->
-      <!-- Drift King Embed -->
-      <div class="game-embed" id="drift-king-game">
-        <h4>Drift King</h4>
-        <iframe src="https://www.onlinegames.io/games/2024/unity/drift-king/index.html" width="100%" height="600" frameborder="0" allowfullscreen style="border:1px solid #ccc;"></iframe>
-        <div style="font-size:12px; margin-top:6px;">
-          <a href="https://www.onlinegames.io/game/drift-king" target="_blank">Drift King on OnlineGames.io</a>
-        </div>
-        <div class="game-description" id="desc-drift-king-game">
-Drift King stands out among online drift games, offering a unique experience where you can witness the smoke you leave behind from the rearview window.  This game surrounds you in every realistic detail, from its premium 3D visuals to the choice of 10 sports cars and 6 maps.
-
-The comprehensive tuning options further enhance the game, making it a complete package for drifting enthusiasts. 
-
-Controls
-
-WASD or arrow keys: Move car 
-M: Rearview Mirror
-C: Change Carnera
-R: Reset Car
-U: Toggle between KMH and MPH
-I: Start/Stop Engine
-P: Fullscreen
-
-How To Play Drift King
-The traditional approach in a car game would be to give zero cash to the player at the beginning.
-        </div>
-      </div>
-      <!-- Chicken Jockey 3D Model Embed -->
-      <div class="game-embed" id="chicken-jockey-fun">
-        <h4>Chicken Jockey 3D Model (for fun!)</h4>
-        <iframe title="Chicken Jockey - Sketchfab" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
-          allow="autoplay; fullscreen; xr-spatial-tracking"
-          xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share
-          width="100%" height="480"
-          src="https://sketchfab.com/models/b4a928ed219746b7997fb7057ec65f32/embed">
-        </iframe>
-        <div style="font-size:12px; margin-top:6px;">
-          <a href="https://sketchfab.com/3d-models/chicken-jockey-b4a928ed219746b7997fb7057ec65f32" target="_blank">View on Sketchfab</a>
-        </div>
-        <div class="game-description" id="desc-chicken-jockey-fun">
-          A fun 3D model of the Minecraft Chicken Jockey, embedded directly from Sketchfab!<br>
-          You can rotate, zoom, and explore the model interactively.
-        </div>
       </div>
     </div> 
 
     <!-- Sidebar -->
     <div class="col-md-4">
       <div class="emag-title"><b>EMAG Games</b></div><br>
-      <p><b>Contact:</b> <a href="https://github.com/pythonscripts123" target="_blank">pythonscripts123</a><br>
-      </p>
+      <p><b>Contact:</b> <a href="https://github.com/pythonscripts123" target="_blank">pythonscripts123</a></p>
       <div id="about" style="margin-top:30px;">
         <h4>About EMAG</h4>
         <p>EMAG is a simple, free online arcade. Play classic and modern games, right in your browser—no downloads needed!</p>
