@@ -12,8 +12,14 @@
   <style>
     body { background: #f9f9f9; font-family: 'Oswald', sans-serif; font-weight: 400; }
     .navbar-brand { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 28px; }
-    .emag-title { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 32px; }
-    .container { margin-top: 50px; }
+    .emag-title { font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 32px; margin-top: 20px; }
+    .sidebar {
+      background: #fff;
+      padding: 15px;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      margin-top: 15px;
+    }
     .footer {
       position: fixed;
       left: 0;
@@ -58,14 +64,17 @@
 <!-- Page Content -->
 <div class="container">
   <div class="row">
+    <!-- Main Content -->
     <div class="col-md-8" style="min-height: 100vh;">
       <div class="emag-title">About EMAG Games</div>
-      <p>EMAG is a simple, free online arcade. Play classic and modern games, right in your browser—no downloads needed!</p>
-      
-      <p><b>Contact:</b> <a href="https://github.com/pythonscripts123" target="_blank">Contact pythonscripts123 on GitHub</a>.</p>
-      
-      <!-- Back to Homepage Button -->
-      <a href="index.html" class="btn btn-primary">Back to Homepage</a>
+      <p><b>MAG</b> is a simple, free online arcade. Play classic and modern games, right in your browser—no downloads needed!</p>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="col-md-4">
+      <div class="sidebar">
+        <p><b>Contact:</b> <a href="https://github.com/pythonscripts123" target="_blank">Contact pythonscripts123 on GitHub</a>.</p>
+      </div>
     </div>
   </div>
 </div>
